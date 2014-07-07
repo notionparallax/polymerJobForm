@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>unquote</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Platform js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
+
+    <!-- JQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="import" href="../components/font-roboto/roboto.html"> -->
+    <link rel="import" href="components/paper-elements/paper-elements.html">
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+
+<body unresolved touch-action="auto">
+    <!--
+        first name [_____]
+        last name  [_____]
+        Skills
+        [X]  [X]  [X]  [X]  [X]  [X]
+        [X]  [X]  [X]  [X]  [X]  [X]     <-- e.g. many skills checkboxes
+        [X]  [X]  [X]  [X]  [X]  [X]
+        job code          [_____]        <-- code of the specific job applied for, there would be one on each advertised job
+        Link to portfolio [_____]
+        Availability      [_____]
+        Covering letter
+        ___________________
+        |                  |
+        |__________________| -->
+    <div class="container">
+        <p>We no longer accept job applications by email. Fill in the form below and we'll get in touch soon.</p>
+        <paper-input floatingLabel label="First Name" name="first_name"></paper-input>
+        <paper-input floatingLabel label="Last Name" name="last_name"></paper-input>
+        <br>
+        <paper-input floatingLabel label="Email Address"></paper-input>
+        <paper-input floatingLabel label="Phone number"></paper-input>
+        <br>
+        <div class="row">
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill1">Skill1</label>
+                <paper-checkbox name="skill1"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill2">Skill2</label>
+                <paper-checkbox name="skill2"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill3">Skill3</label>
+                <paper-checkbox name="skill3"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill4">Skill4</label>
+                <paper-checkbox name="skill4"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill5">Skill5</label>
+                <paper-checkbox name="skill5"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill6">Skill6</label>
+                <paper-checkbox name="skill6"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill7">Skill7</label>
+                <paper-checkbox name="skill7"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill8">Skill8</label>
+                <paper-checkbox name="skill8"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill9">Skill9</label>
+                <paper-checkbox name="skill9"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill10">Skill10</label>
+                <paper-checkbox name="skill10"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill11">Skill11</label>
+                <paper-checkbox name="skill11"></paper-checkbox>
+            </div>
+            <div class="skill-container col-xs-6 col-sm-2">
+                <label for="skill12">Skill12</label>
+                <paper-checkbox name="skill12"></paper-checkbox>
+            </div>
+        </div>
+        <br>
+        <p>We no longer accept portfolios attatched to emails</p>
+        <paper-input floatingLabel label="Link to your portfolio"></paper-input>
+        <br>
+        <paper-input multiline floatingLabel label="Covering letter"></paper-input>
+        <br>
+        <paper-button label="submit" id="go" raisedButton></paper-button>
+    </div>
+</body>
+<script>
+window.addEventListener('polymer-ready', function(e) {
+    console.log('polymer-ready');
+    document.getElementById("go").click(function(){
+        console.log('go clicked');
+        var firstName = document.querySelector("paper-input[name=first_name]").inputValue
+        var lastName = document.querySelector("paper-input[name=last_name]").inputValue
+        // var ln = document.querySelector("paper-input[name=last_name]").inputValue
+        // var ln = document.querySelector("paper-input[name=last_name]").inputValue
+        // var ln = document.querySelector("paper-input[name=last_name]").inputValue
+        // var ln = document.querySelector("paper-input[name=last_name]").inputValue
+        console.log(firstName);
+        console.log(lastName);
+
+        var inputs = document.querySelectorAll("paper-input")
+        for (i in inputs) {
+            console.log(inputs[i].inputValue);
+        }
+    });
+});
+</script>
+
+</html>
